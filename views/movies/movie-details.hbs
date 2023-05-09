@@ -1,0 +1,25 @@
+<h2>Detalles:</h2>
+
+<h4>Titulo: {{movie.title}}</h4>
+<br>
+<p>Genero: {{movie.genre}}</p>
+<br>
+<p>Resumen: {{movie.plot}}</p>
+<br>
+
+<h4>Cast</h4>
+{{#each movie.cast}}
+<li>{{this.name}}</li>
+{{/each}}
+<br>
+
+<form action="/movies/{{movie._id}}/edit">
+    <button>Actualizar</button>
+</form>
+
+<form action="/movies/{{movie._id}}/delete" method="post">
+<button>Borrar</button>
+</form>
+
+
+

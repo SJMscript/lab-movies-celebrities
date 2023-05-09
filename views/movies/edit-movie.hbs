@@ -1,0 +1,28 @@
+<h2>Edita una Peli</h2>
+
+<form action="/movies/{{this.movieDetails._id}}/edit" method="post">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" value="{{this.movieDetails.title}}" required />
+  {{! obligamos a que se rellene el campo }}
+<br>
+  <label for="genre">Genre:</label>
+  <input type="text" id="genre" name="genre" value="{{this.movieDetails.genre}}"required />
+<br>
+
+  <label for="plot">Plot:</label>
+  <input type="text" id="plot" name="plot" value="{{this.movieDetails.plot}}"required />
+<br>
+    <label for="cast">Celebrity</label>
+  <select name="cast" multiple="true" >
+
+    {{#each this.allCelebrities}}
+
+      <option value="{{this._id}}">{{this.name}}</option>
+
+    {{/each}}
+
+  </select>
+<br>
+
+  <button type="submit">Actualizar</button>
+</form>
